@@ -7,6 +7,7 @@ import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
+import AuthenticationCardLogo from '@/Components/AuthenticationCardLogo.vue';
 
 defineProps({
     title: String,
@@ -42,7 +43,7 @@ const logout = () => {
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
                                 <Link :href="route('dashboard')">
-                                    <ApplicationMark class="block h-9 w-auto" />
+                                    <AuthenticationCardLogo class="block h-9 w-10" />
                                 </Link>
                             </div>
 
@@ -274,6 +275,39 @@ const logout = () => {
 
             <!-- Page Content -->
             <main>
+                <div class="w-16 md:w-48 2xl:w-64 h-[500px] bg-blue-700 transition-all duration-300 ease-in-out">
+                    
+                    
+                    
+                    <div class="p-3">
+                        <form class=''>
+                        <lable for='search' value='logo' class='w-full'>
+                        <input class='rounded hidden md:block bg-gray-100 h-8' type='text' name='search' placeholder='Search..' />
+                        <span>
+                        logo
+                        </span>
+                        </lable>
+
+
+
+                        <label class="flex-shrink-0 flex items-center justify-center w-10 h-10">
+        <span>
+            icon
+        </span>
+    </label>
+
+    <input type="text" 
+           class="flex-1 w-full min-w-0 rounded-md border-gray-300 bg-gray-700 text-white p-2" 
+           placeholder="Search..." />
+                        </form>
+                    </div>
+                    <h1 class="text-2xl font-bold">My Project</h1>
+                    <nav class="mt-10 bg-white-200">
+                        <a href="#" class="block py-2.5 px-4 rounded hover:bg-gray-700">Dashboard</a>
+                        
+                        <a href="#" class="block py-2.5 px-4 rounded hover:bg-gray-700">Settings</a>
+                    </nav>
+                </div>
                 <slot />
             </main>
         </div>

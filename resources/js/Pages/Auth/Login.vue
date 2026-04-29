@@ -40,8 +40,8 @@ const submit = () => {
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             {{ status }}
         </div>
-
-        <form @submit.prevent="submit">
+    <div class="bg-blue-200 rounded p-2 shadow-xl">
+        <form @submit.prevent="submit" class="m-4">
             <div>
                 <InputLabel for="email" value="Email" />
                 <TextInput
@@ -86,5 +86,6 @@ const submit = () => {
                 </PrimaryButton>
             </div>
         </form>
+    </div>
     </AuthenticationCard>
 </template>

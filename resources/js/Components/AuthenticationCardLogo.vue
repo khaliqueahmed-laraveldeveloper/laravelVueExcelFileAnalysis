@@ -4,14 +4,6 @@ import { Link } from '@inertiajs/vue3';
 
 <template>
     <Link :href="'/'">
-        <svg
-            class="size-16"
-            viewBox="0 0 48 48"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <path d="M11.395 44.428C4.557 40.198 0 32.632 0 24 0 10.745 10.745 0 24 0a23.891 23.891 0 0113.997 4.502c-.2 17.907-11.097 33.245-26.602 39.926z" fill="#6875F5" />
-            <path d="M14.134 45.885A23.914 23.914 0 0024 48c13.255 0 24-10.745 24-24 0-3.516-.756-6.856-2.115-9.866-4.659 15.143-16.608 27.092-31.75 31.751z" fill="#6875F5" />
-        </svg>
+      <svg class="size-10" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#53ce94"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 7.99542V10H8V7.99542H10Z" fill="#36dd15"></path> <path d="M10 4.99738V6.99542H8V4.99738H10Z" fill="#43ad0e"></path> <path d="M7 4.99738H5V6.99542H7V4.99738Z" fill="#5eb32d"></path> <path d="M7 7.99542H5V10H7V7.99542Z" fill="#76ae13"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M1 1.5C1 0.671573 1.67157 0 2.5 0H10.7071L14 3.29289V13.5C14 14.3284 13.3284 15 12.5 15H2.5C1.67157 15 1 14.3284 1 13.5V1.5ZM11 3.99738H4V11H11V3.99738Z" fill="#1c54a2"></path> </g></svg>
     </Link>
 </template>
