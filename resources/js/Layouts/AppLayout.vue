@@ -30,7 +30,10 @@ const logout = () => {
 
 <template>
     <div>
-        <Head :title="title" />
+       <Head :title="title">
+    <!-- This will be injected into the browser's <head> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  </Head>
 
         <Banner />
 
@@ -275,41 +278,66 @@ const logout = () => {
 
             <!-- Page Content -->
             <main>
-                <div class="w-16 md:w-48 2xl:w-64 h-[500px] bg-blue-700 transition-all duration-300 ease-in-out">
-                    
-                    
-                    
-                    <div class="p-3">
-                        <form class=''>
-                        <lable for='search' value='logo' class='w-full'>
-                        <input class='rounded hidden md:block bg-gray-100 h-8' type='text' name='search' placeholder='Search..' />
-                        <span>
-                        logo
-                        </span>
-                        </lable>
-
-
-
-                        <label class="flex-shrink-0 flex items-center justify-center w-10 h-10">
-        <span>
-            icon
-        </span>
-    </label>
-
-    <input type="text" 
-           class="flex-1 w-full min-w-0 rounded-md border-gray-300 bg-gray-700 text-white p-2" 
-           placeholder="Search..." />
-                        </form>
-                    </div>
-                    <h1 class="text-2xl font-bold">My Project</h1>
-                    <nav class="mt-10 bg-white-200">
-                        <a href="#" class="block py-2.5 px-4 rounded hover:bg-gray-700">Dashboard</a>
+                <div class="flex">
+                    <div class="flex flex-col w-16 md:w-48 2xl:w-64 p-1 mr-2 border-r-4 border-gray-400 border-transparent h-[500px] shadow-sm bg-gray-200 justify transition-all duration-300 ease-in-out">
                         
-                        <a href="#" class="block py-2.5 px-4 rounded hover:bg-gray-700">Settings</a>
-                    </nav>
+                        <div class="p-2 w-full bg-gray-500 rounded-md h-12 mb-2 mx-auto border border-black">
+                            <h2 class='text-center mx-auto text-white text-2xl font-bold'>Manu</h2>
+
+                        </div>
+                        <div class="w-full border border-black rounded-md">
+                            <form>
+                                <div class="flex justify-center items-center p-2 bg-gray-500 rounded-md h-16">
+                                    
+                                    <input
+                                        type="text"
+                                        class="hidden md:block w-full  flex-1 form-control h-7 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                        name="search"
+                                        id="search"
+                                        
+                                        aria-describedby="helpId"
+                                        placeholder="Search..."
+                                    />
+                                    <label for="search" class="form-label h-7 mx-auto text-white">
+                                        <span class="material-symbols-outlined">
+                                         search
+                                        </span>
+                                    </label>
+                                </div>
+                            
+                            </form>
+
+                        </div>
+                        <div class="mt-5">
+                            <ul class="w-full bg-black-100 rounded-md border-gray-300 border-2 shadow-sm">
+                                <li class="p-2 rounded-md hover:bg-gray-200 cursor-pointer">
+                                    list
+                                    <ul>
+                                        <li>
+                                        
+                                            <Link href="#">one</Link>
+                                        </li>
+                                        <li>
+                                        
+                                            <Link href="#">one</Link>
+                                        </li>
+                                        
+                                    </ul>
+                                </li>
+                                <li class="p-2 rounded-md hover:bg-gray-200 cursor-pointer">Item 2</li>
+                                <li class="p-2 rounded-md hover:bg-gray-200 cursor-pointer">Item 3</li>
+                                <li class="p-2 rounded-md hover:bg-gray-200 cursor-pointer">Item 4</li>
+                                <li class="p-2 rounded-md hover:bg-gray-200 cursor-pointer">Item 5</li>
+                            </ul>
+                        </div>
+                    
+                    </div>
+                    <div class="flex-1 p-1 bg-white rounded border-gray-500 border-4 h-[500px] shadow-sm">
+                        <slot />
+                    </div>
                 </div>
-                <slot />
             </main>
         </div>
+        
     </div>
 </template>
