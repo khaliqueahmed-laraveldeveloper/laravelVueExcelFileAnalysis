@@ -8,6 +8,13 @@ import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import AuthenticationCardLogo from '@/Components/AuthenticationCardLogo.vue';
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+
+// This re-runs every time this layout is mounted
+onMounted(() => {
+    initFlowbite();
+})
 
 defineProps({
     title: String,
@@ -33,7 +40,9 @@ const logout = () => {
        <Head :title="title">
     <!-- This will be injected into the browser's <head> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-  </Head>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+    
+    </Head>
 
         <Banner />
 
@@ -279,11 +288,13 @@ const logout = () => {
             <!-- Page Content -->
             <main>
                 <div class="flex">
-                    <div class="flex flex-col w-16 md:w-48 2xl:w-64 p-1 mr-2 border-r-4 border-gray-400 border-transparent h-[500px] shadow-sm bg-gray-200 justify transition-all duration-300 ease-in-out">
+                    <div class="flex flex-col w-20 md:w-48 2xl:w-64 p-1 mr-2 border-r-4 border-gray-400 border-transparent h-[500px] shadow-sm bg-gray-200 justify transition-all duration-300 ease-in-out">
                         
-                        <div class="p-2 w-full bg-gray-500 rounded-md h-12 mb-2 mx-auto border border-black">
-                            <h2 class='text-center mx-auto text-white text-2xl font-bold'>Manu</h2>
-
+                        <div class="p-2 flex w-full bg-gray-500 rounded-md h-12 mb-2 mx-auto border border-black">
+                            <div class="mx-auto">
+                                <span class="h-8 my-auto material-symbols-outlined text-white">Home</span>
+                                <h2 class='hidden md:inline text-center  text-white text-2xl font-bold'>Manu</h2>
+                            </div>
                         </div>
                         <div class="w-full border border-black rounded-md">
                             <form>
@@ -310,24 +321,35 @@ const logout = () => {
                         </div>
                         <div class="mt-5">
                             <ul class="w-full bg-black-100 rounded-md border-gray-300 border-2 shadow-sm">
+                                <li class="p-2 pl-4 rounded-md hover:bg-gray-200 cursor-pointer">
+                                    <a href="#" class="flex items-center  py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+                                    <span class="material-symbols-outlined">monitoring </span>
+                                    <span class="ms-3 hidden md:inline">Dashboard</span>
+                                    </a>
+                                </li>
                                 <li class="p-2 rounded-md hover:bg-gray-200 cursor-pointer">
-                                    list
-                                    <ul>
+                                    <button type="button" class="flex items-center w-full justify-between px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                                        <span class="material-symbols-outlined">Person </span>
+
+                                        <span class="flex-1 hidden md:inline ms-3 text-left rtl:text-right whitespace-nowrap">Users</span>
+                                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/></svg>
+                                    </button>
+                                    <ul id="dropdown-example" class="hidden py-2 z-4 space-y-2">
                                         <li>
-                                        
-                                            <Link href="#">one</Link>
+                                            <a href="#" class="pl-3 md:pl-10 flex items-center  py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"><span class="material-symbols-outlined">
+                                                inventory_2
+                                                </span>
+                                            </a>
                                         </li>
                                         <li>
-                                        
-                                            <Link href="#">one</Link>
+                                            <a href="#" class="pl-3 md:pl-10 flex items-center  py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">Billing</a>
                                         </li>
-                                        
+                                        <li>
+                                            <a href="#" class="pl-3 md:pl-10 flex items-center  py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">Invoice</a>
+                                        </li>
                                     </ul>
                                 </li>
-                                <li class="p-2 rounded-md hover:bg-gray-200 cursor-pointer">Item 2</li>
-                                <li class="p-2 rounded-md hover:bg-gray-200 cursor-pointer">Item 3</li>
-                                <li class="p-2 rounded-md hover:bg-gray-200 cursor-pointer">Item 4</li>
-                                <li class="p-2 rounded-md hover:bg-gray-200 cursor-pointer">Item 5</li>
+                                
                             </ul>
                         </div>
                     
